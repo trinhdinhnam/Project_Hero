@@ -23,14 +23,31 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
     this.messageService.add(`HeroesComponent: Selected hero id=${hero.id}`);
   }
+  
   ngOnInit(): void {
     this.getHeroes();
 
   }
+  //Lấy ra danh sách các anh hùng
   getHeroes(): void{
     this.heroService.getHeroes().subscribe(data=>{
         this.heroes = data;
     });
+  }
+  //Hàm thêm một anh hùng vào trong dữ liệu
+  add(name: string): void{
+    
+    name = name.trim();
+    if(!name){ return;}
+    this.heroService.addHero({name} as Hero)
+        .subscribe(hero => {
+          this.heroes.push(hero);
+        })
+  }
+  //Hàm xóa 1 anh hùng
+  delete(hero: Hero): void{
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
   }
 
 }

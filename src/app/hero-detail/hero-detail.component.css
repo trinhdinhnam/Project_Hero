@@ -6,9 +6,12 @@ label {
     font-weight: bold;
   }
   input {
-    height: 2em;
+    height: 1.4em;
     font-size: 1em;
     padding-left: .4em;
+    float: left;
+    margin-top: 3px;
+    margin-left: 20px;
   }
   button {
     margin-top: 20px;
@@ -17,7 +20,12 @@ label {
     border: none;
     padding: 5px 10px;
     border-radius: 4px;
-    cursor: pointer;
+    cursor: pointer;    
+    margin-top:50px;
+    margin-left: 16px;
+  }
+  button:last-of-type{
+    margin-left: 180px;
   }
   button:hover {
     background-color: #cfd8dc;
@@ -26,4 +34,20 @@ label {
     background-color: #eee;
     color: #ccc;
     cursor: auto;
+  }
+  .content{
+    height: 250px;
+    width: 350px;
+    border: 1px solid #607D8B;
+    padding-left: 20px;
+    margin-top: 10px;
+  }
+  .name-text{
+    float: left;
+  }
+  .clear{
+    clear: both;
+  }
+  h2{
+    margin-bottom: 40px;
   }
